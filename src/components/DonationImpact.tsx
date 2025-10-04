@@ -6,6 +6,7 @@ interface DonationCard {
 }
 
 const donations: DonationCard[] = [
+  { amount: 5, description: "Ajuda a alimentar um animal por um dia" },
   { amount: 15, description: "Alimenta 1 animal por uma semana" },
   { amount: 30, description: "Fornece ração e medicamento básico para 2 animais por 10 dias" },
   { amount: 75, description: "Compra um saco de 10kg de ração que alimenta 5 animais por 1 mês" },

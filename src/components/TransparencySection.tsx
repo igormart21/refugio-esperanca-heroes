@@ -1,5 +1,9 @@
 import { DollarSign, Syringe, Sparkles, Wrench, Stethoscope, Info } from "lucide-react";
-import shelterInterior from "@/assets/shelter-interior.jpg";
+import proof1 from "@/assets/proof1.jpeg";
+import proof2 from "@/assets/proof2.jpeg";
+import proof3 from "@/assets/proof3.jpeg";
+import proof4 from "@/assets/proof4.jpeg";
+import proof5 from "@/assets/proof5.jpeg";
 
 const TransparencySection = () => {
   const usageItems = [
@@ -67,14 +71,34 @@ const TransparencySection = () => {
           </div>
           <h3 className="text-lg md:text-xl font-bold text-card-foreground mb-2">Prestação de Contas Transparente</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base mb-6">
-            Há 10 anos publicamos nossa luta em fotos, histórias e resultados visíveis. Acreditamos que a transparência é fundamental para construir confiança com nossos doadores.
+            Há 13 anos publicamos nossa luta em fotos, histórias e resultados visíveis. Acreditamos que a transparência é fundamental para construir confiança com nossos doadores.
           </p>
           
-          <div className="mt-6">
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <img 
-              src={shelterInterior} 
-              alt="Interior do abrigo Refúgio Esperança" 
-              className="w-full max-w-2xl mx-auto rounded-xl shadow-md"
+              src={proof1} 
+              alt="Comprovante de pagamento - Compra de materiais" 
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
+            />
+            <img 
+              src={proof2} 
+              alt="Comprovante de pagamento - Medicamentos" 
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
+            />
+            <img 
+              src={proof3} 
+              alt="Comprovante de pagamento - Materiais para abrigo" 
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
+            />
+            <img 
+              src={proof4} 
+              alt="Comprovante de pagamento - Atendimento veterinário" 
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
+            />
+            <img 
+              src={proof5} 
+              alt="Comprovante de pagamento - Materiais diversos" 
+              className="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
             />
           </div>
         </div>
