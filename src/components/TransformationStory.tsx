@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import transformation1 from "@/assets/transformation-1.jpeg";
 import transformation2 from "@/assets/transformation-2.jpeg";
 import transformation3 from "@/assets/transformation-3.jpeg";
@@ -60,7 +61,14 @@ const TransformationStory = () => {
           Veja como o amor e cuidado transformam vidas abandonadas em histórias de esperança
         </p>
         
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel 
+          className="w-full max-w-5xl mx-auto"
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+        >
           <CarouselContent>
             {transformations.map((transformation) => (
               <CarouselItem key={transformation.id}>
