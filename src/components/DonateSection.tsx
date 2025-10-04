@@ -1,13 +1,38 @@
 import { Button } from "@/components/ui/button";
-import { Copy, ShieldCheck, Heart, CircleCheckBig } from "lucide-react";
+import { Copy, ShieldCheck, Heart, CircleCheckBig, Download } from "lucide-react";
 import { toast } from "sonner";
+import { useEffect, useMemo, useState } from "react";
+import QRCode from "qrcode";
+import { generatePixPayload } from "@/lib/pix";
 
 const DonateSection = () => {
   const pixKey = "refugioesperanca.ong@gmail.com";
 
+  const [qrDataUrl, setQrDataUrl] = useState<string>("");
+  const payload = useMemo(() => generatePixPayload({
+    pixKey,
+    merchantName: ".",
+    merchantCity: ".",
+    description: "Refugio Esperanca",
+  }), [pixKey]);
+
+  useEffect(() => {
+    QRCode.toDataURL(payload, { margin: 1, width: 480 })
+      .then(setQrDataUrl)
+      .catch(() => setQrDataUrl(""));
+  }, [payload]);
+
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
     toast.success("Chave PIX copiada!");
+  };
+
+  const downloadQr = () => {
+    if (!qrDataUrl) return;
+    const a = document.createElement("a");
+    a.href = qrDataUrl;
+    a.download = "pix-qrcode.png";
+    a.click();
   };
 
   return (
@@ -26,10 +51,21 @@ const DonateSection = () => {
           <p className="text-card-foreground font-medium mb-1">Chave PIX:</p>
           <p className="text-lg font-bold text-foreground mb-4">{pixKey}</p>
           
-          <Button onClick={copyPixKey} size="lg" className="shadow-md">
-            <Copy className="mr-2 h-5 w-5" />
-            Copiar chave PIX
-          </Button>
+          <div className="flex flex-col items-center gap-4 mb-6">
+            {qrDataUrl && (
+              <img src={qrDataUrl} alt="QR Code PIX" className="w-56 h-56 rounded-md bg-white p-2" />
+            )}
+            <div className="flex gap-3">
+              <Button onClick={copyPixKey} size="lg" className="shadow-md">
+                <Copy className="mr-2 h-5 w-5" />
+                Copiar chave PIX
+              </Button>
+              <Button onClick={downloadQr} size="lg" variant="secondary" className="shadow-md">
+                <Download className="mr-2 h-5 w-5" />
+                Baixar QR Code
+              </Button>
+            </div>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-card-foreground text-sm">
