@@ -3,7 +3,7 @@ import { Copy, ShieldCheck, Heart, CircleCheckBig } from "lucide-react";
 import { toast } from "sonner";
 
 const DonateSection = () => {
-  const pixKey = "refugioesperanca@email.com";
+  const pixKey = "refugioesperanca.ong@gmail.com";
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);

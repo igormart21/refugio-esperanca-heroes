@@ -29,7 +29,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm opacity-80">
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              refugioesperanca@email.com
+              refugioesperanca.ong@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
@@ -38,8 +38,7 @@ const Footer = () => {
           </ul>
           <div className="bg-background/10 text-background p-4 rounded-lg mt-5">
             <p className="text-sm font-semibold">PIX para doações:</p>
-            <p className="text-xs break-words mt-1">refugioesperanca@email.com</p>
-            <p className="text-xs mt-1">Maria Silva Santos</p>
+            <p className="text-xs break-words mt-1">refugioesperanca.ong@gmail.com</p>
           </div>
         </div>
 
