@@ -4,7 +4,6 @@ import { toast } from "sonner";
 
 const DonateSection = () => {
   const pixKey = "refugioesperanca@email.com";
-  const recipient = "Maria Silva Santos";
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
@@ -26,9 +25,6 @@ const DonateSection = () => {
         <div className="bg-accent rounded-2xl shadow-md p-6 md:p-8 mb-10">
           <p className="text-card-foreground font-medium mb-1">Chave PIX:</p>
           <p className="text-lg font-bold text-foreground mb-4">{pixKey}</p>
-          
-          <p className="text-card-foreground font-medium mb-1">Recebedor:</p>
-          <p className="text-base text-foreground mb-6">{recipient}</p>
           
           <Button onClick={copyPixKey} size="lg" className="shadow-md">
             <Copy className="mr-2 h-5 w-5" />
