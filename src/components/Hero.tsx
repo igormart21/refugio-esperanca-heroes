@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-shelter.jpg";
 import { Heart } from "lucide-react";
 
 const Hero = () => {
@@ -26,7 +25,15 @@ const Hero = () => {
         </div>
 
         <div className="w-full aspect-video max-w-3xl rounded-2xl overflow-hidden shadow-lg">
-          <img src={heroImage} alt="Animais resgatados no Refúgio Esperança" className="w-full h-full object-cover" />
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/BbYIjD5ek-w?rel=0&modestbranding=1&playsinline=1"
+            title="Vídeo principal do Refúgio Esperança"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <Button 
