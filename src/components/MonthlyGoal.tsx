@@ -3,8 +3,8 @@ import { TrendingUp } from "lucide-react";
 
 const MonthlyGoal = () => {
   const goal = 10000;
-  const remaining = 510; // faltantes
-  const current = goal - remaining;
+  const current = 510; // progresso atual
+  const remaining = goal - current;
   const percentage = (current / goal) * 100;
 
   const formatCurrency = (value: number) =>
