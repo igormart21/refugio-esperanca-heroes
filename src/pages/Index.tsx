@@ -18,10 +18,10 @@ const Index = () => {
       <About />
       <MonthlyGoal />
       <ImpactStory />
+      <TransformationStory />
       <DonationImpact />
       <DonateSection />
       <TransparencySection />
-      <TransformationStory />
       <Testimonials />
       <Footer />
     </div>
