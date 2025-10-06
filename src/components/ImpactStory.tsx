@@ -1,6 +1,9 @@
 import founderImage from "@/assets/founder.jpg";
 
 const ImpactStory = () => {
+  const remaining = 510;
+  const formatCurrency = (value: number) =>
+    value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   return (
     <section className="px-6 py-12 md:px-12 bg-gradient-warm">
       <div className="max-w-5xl mx-auto">
@@ -26,6 +29,11 @@ const ImpactStory = () => {
               <span className="text-primary font-bold">Cada real doado</span> ajuda a manter mais de{" "}
               <span className="text-secondary font-bold">150 animais vivos e seguros</span>
             </p>
+            <div className="mt-6 bg-accent rounded-xl p-4 text-center">
+              <p className="text-sm text-muted-foreground">Faltam apenas</p>
+              <p className="text-2xl font-extrabold text-primary">R$ {formatCurrency(remaining)}</p>
+              <p className="text-xs text-muted-foreground">para alcançarmos nossa meta mensal</p>
+            </div>
           </div>
         </div>
       </div>
