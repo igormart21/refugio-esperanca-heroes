@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Copy, ShieldCheck, Heart, CircleCheckBig, Download } from "lucide-react";
-import photoHero1 from "@/assets/PHOTO-2025-10-06-09-10-50.jpg";
-import photoHero2 from "@/assets/PHOTO-2025-10-06-09-10-47.jpg";
+// imagens do apelo removidas desta seção (usadas agora em About)
 import { toast } from "sonner";
 import { useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
@@ -70,47 +69,7 @@ const DonateSection = () => {
           </div>
         </div>
         
-        {/* Apelo com imagens e texto estratégico */}
-        <div className="mt-12 grid grid-cols-1 gap-6">
-          <div className="bg-accent rounded-2xl shadow-md p-6 md:p-8 text-left">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-4">
-                <p className="text-card-foreground text-base md:text-lg font-semibold">🙌 Toda ajuda é bem-vinda:</p>
-                <p className="text-muted-foreground">
-                  Mesmo uma doação de R$ 1,00 faz diferença. E se não puder doar, compartilhe com amigos, grupos e familiares.
-                  Juntos, conseguimos transformar sofrimento em esperança!
-                </p>
-                <p className="text-destructive font-medium">
-                  O tempo está contra nós, e cada minuto faz diferença para essas vidas que dependem unicamente da nossa solidariedade.
-                </p>
-                <div className="grid grid-cols-3 gap-3">
-                  <img src={photoHero1} alt="Animal resgatado em cuidados" className="rounded-lg object-cover h-24 w-full" />
-                  <img src={photoHero2} alt="Casos de resgate que precisam de ajuda" className="rounded-lg object-cover h-24 w-full col-span-2" />
-                </div>
-              </div>
-              <div className="bg-card rounded-xl p-5 text-center">
-                <p className="text-sm text-muted-foreground mb-2">Quem somos</p>
-                <p className="text-card-foreground mb-4">
-                  Há mais de 10 anos, o Refúgio Esperança resgata e cuida de animais em situação de risco. Mais de 800 vidas já foram salvas.
-                </p>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">+800</p>
-                    <p className="text-xs text-muted-foreground">ANIMAIS RESGATADOS</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-secondary">+150</p>
-                    <p className="text-xs text-muted-foreground">ATUALMENTE EM ABRIGO</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">10</p>
-                    <p className="text-xs text-muted-foreground">ANOS NA CAUSA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Bloco de apelo movido para a seção About */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-card-foreground text-sm">
           <div className="flex flex-col items-center">

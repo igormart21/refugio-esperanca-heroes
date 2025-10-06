@@ -1,4 +1,6 @@
 import { Heart, Users, Award } from "lucide-react";
+import photoHero1 from "@/assets/PHOTO-2025-10-06-09-10-50.jpg";
+import photoHero2 from "@/assets/PHOTO-2025-10-06-09-10-47.jpg";
 
 const About = () => {
   return (
@@ -26,6 +28,45 @@ const About = () => {
             <Award className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-3xl md:text-5xl font-extrabold text-primary">10</h3>
             <p className="mt-2 text-card-foreground text-sm md:text-base font-medium">ANOS NA CAUSA</p>
+          </div>
+        </div>
+
+        {/* Bloco de apelo com imagens */}
+        <div className="mt-10 bg-accent rounded-2xl shadow-md p-6 md:p-8 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div className="space-y-4">
+              <p className="text-card-foreground text-base md:text-lg font-semibold">🙌 Toda ajuda é bem-vinda:</p>
+              <p className="text-muted-foreground">
+                Mesmo uma doação de R$ 1,00 faz diferença. E se não puder doar, compartilhe com amigos, grupos e familiares. Juntos, conseguimos transformar sofrimento em esperança!
+              </p>
+              <p className="text-destructive font-medium">
+                O tempo está contra nós, e cada minuto faz diferença para essas vidas que dependem unicamente da nossa solidariedade.
+              </p>
+              <div className="grid grid-cols-3 gap-3">
+                <img src={photoHero1} alt="Animal resgatado em cuidados" className="rounded-lg object-cover h-24 md:h-32 w-full" />
+                <img src={photoHero2} alt="Casos de resgate que precisam de ajuda" className="rounded-lg object-cover h-24 md:h-32 w-full col-span-2" />
+              </div>
+            </div>
+            <div className="bg-card rounded-xl p-5 text-center">
+              <p className="text-sm text-muted-foreground mb-2">Quem somos</p>
+              <p className="text-card-foreground mb-4">
+                Há mais de 10 anos, o Refúgio Esperança resgata e cuida de animais em situação de risco. Mais de 800 vidas já foram salvas.
+              </p>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-2xl font-extrabold text-primary">+800</p>
+                  <p className="text-xs text-muted-foreground">ANIMAIS RESGATADOS</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-extrabold text-secondary">+150</p>
+                  <p className="text-xs text-muted-foreground">ATUALMENTE EM ABRIGO</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-extrabold text-primary">10</p>
+                  <p className="text-xs text-muted-foreground">ANOS NA CAUSA</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
