@@ -2,10 +2,13 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp } from "lucide-react";
 
 const MonthlyGoal = () => {
-  const current = 4850;
   const goal = 10000;
+  const remaining = 510; // faltantes
+  const current = goal - remaining;
   const percentage = (current / goal) * 100;
-  const remaining = goal - current;
+
+  const formatCurrency = (value: number) =>
+    value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,15 +35,15 @@ const MonthlyGoal = () => {
             />
           </div>
           <div className="flex justify-between text-sm mt-2">
-            <span className="font-semibold text-card-foreground">R$ {current.toLocaleString('pt-BR')}</span>
+            <span className="font-semibold text-card-foreground">R$ {formatCurrency(current)}</span>
             <span className="text-secondary font-medium">{percentage.toFixed(1)}%</span>
           </div>
-          <p className="text-sm text-muted-foreground mt-1">Meta: R$ {goal.toLocaleString('pt-BR')}</p>
+          <p className="text-sm text-muted-foreground mt-1">Meta: R$ {formatCurrency(goal)}</p>
         </div>
         
         <div className="bg-accent rounded-xl py-4 px-6 mt-6">
           <p className="text-sm text-muted-foreground">Faltam apenas</p>
-          <p className="text-2xl md:text-3xl font-extrabold text-primary">R$ {remaining.toLocaleString('pt-BR')}</p>
+          <p className="text-2xl md:text-3xl font-extrabold text-primary">R$ {formatCurrency(remaining)}</p>
           <p className="text-sm text-muted-foreground">para alcançarmos nossa meta mensal</p>
         </div>
         
