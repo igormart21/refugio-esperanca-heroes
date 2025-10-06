@@ -42,30 +42,10 @@ const About = () => {
               <p className="text-destructive font-medium">
                 O tempo está contra nós, e cada minuto faz diferença para essas vidas que dependem unicamente da nossa solidariedade.
               </p>
-              <div className="grid grid-cols-3 gap-3">
-                <img src={photoHero1} alt="Animal resgatado em cuidados" className="rounded-lg object-cover h-24 md:h-32 w-full" />
-                <img src={photoHero2} alt="Casos de resgate que precisam de ajuda" className="rounded-lg object-cover h-24 md:h-32 w-full col-span-2" />
-              </div>
             </div>
-            <div className="bg-card rounded-xl p-5 text-center">
-              <p className="text-sm text-muted-foreground mb-2">Quem somos</p>
-              <p className="text-card-foreground mb-4">
-                Há mais de 10 anos, o Refúgio Esperança resgata e cuida de animais em situação de risco. Mais de 800 vidas já foram salvas.
-              </p>
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-extrabold text-primary">+800</p>
-                  <p className="text-xs text-muted-foreground">ANIMAIS RESGATADOS</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-secondary">+150</p>
-                  <p className="text-xs text-muted-foreground">ATUALMENTE EM ABRIGO</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-extrabold text-primary">10</p>
-                  <p className="text-xs text-muted-foreground">ANOS NA CAUSA</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-1 gap-3">
+              <img src={photoHero2} alt="Casos de resgate que precisam de ajuda" className="rounded-lg object-cover h-32 md:h-48 w-full" />
+              <img src={photoHero1} alt="Animal resgatado em cuidados" className="rounded-lg object-cover h-32 md:h-48 w-full" />
             </div>
           </div>
         </div>
