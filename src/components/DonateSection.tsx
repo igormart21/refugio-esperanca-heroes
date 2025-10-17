@@ -10,18 +10,30 @@ const DonateSection = () => {
   const pixKey = "refugioesperanca.ong@gmail.com";
 
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
+  const [txId] = useState<string>(() => `TX${Date.now().toString(36).toUpperCase()}`.slice(0, 25));
   const payload = useMemo(() => generatePixPayload({
     pixKey,
     merchantName: ".",
     merchantCity: ".",
     description: "Refugio Esperanca",
-  }), [pixKey]);
+    txId,
+  }), [pixKey, txId]);
 
   useEffect(() => {
     QRCode.toDataURL(payload, { margin: 1, width: 480 })
       .then(setQrDataUrl)
       .catch(() => setQrDataUrl(""));
   }, [payload]);
+
+  // Dispara evento do Pixel quando o QR é exibido (intenção de doação)
+  useEffect(() => {
+    if (qrDataUrl && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_category: 'PIX',
+        currency: 'BRL',
+      });
+    }
+  }, [qrDataUrl]);
 
   const copyPixKey = () => {
     navigator.clipboard.writeText(pixKey);
@@ -66,6 +78,9 @@ const DonateSection = () => {
                 Baixar QR Code
               </Button>
             </div>
+            <p className="text-xs text-muted-foreground max-w-md">
+              Após pagar, confirmamos com o Mercado Pago via webhook e registramos a compra no Facebook.
+            </p>
           </div>
         </div>
         

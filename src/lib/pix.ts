@@ -7,6 +7,7 @@ export interface PixPayloadOptions {
   merchantCity?: string; // cidade do recebedor (opcional)
   amount?: string; // valor opcional, em formato 0.00
   description?: string; // descrição opcional
+  txId?: string; // identificador da transação para conciliação
 }
 
 function toTLV(id: string, value: string): string {
@@ -32,7 +33,7 @@ function crc16ccitt(payload: string): string {
 }
 
 export function generatePixPayload(options: PixPayloadOptions): string {
-  const { pixKey, merchantName = ".", merchantCity = ".", amount, description } = options;
+  const { pixKey, merchantName = ".", merchantCity = ".", amount, description, txId } = options;
 
   // IDs EMV
   const ID_PAYLOAD_FORMAT = "00"; // 01 fixo para PIX
@@ -66,7 +67,9 @@ export function generatePixPayload(options: PixPayloadOptions): string {
   payload += toTLV(ID_COUNTRY_CODE, "BR");
   payload += toTLV(ID_MERCHANT_NAME, merchantName); // máx 25 chars em muitos leitores
   payload += toTLV(ID_MERCHANT_CITY, merchantCity);
-  payload += toTLV(ID_ADDITIONAL_DATA, toTLV("05", "***")); // TxId
+  // TxId (05) até 25 caracteres. Usa *** como padrão quando não informado
+  const txIdValue = txId && txId.length > 0 ? txId.slice(0, 25) : "***";
+  payload += toTLV(ID_ADDITIONAL_DATA, toTLV("05", txIdValue)); // TxId
 
   // CRC16
   const partial = payload + ID_CRC16 + "04"; // reservar espaço
